@@ -522,15 +522,15 @@ iframe {
   width: 100%;
 }
 .responsive {
-  display: none !important;
+  display: none;
 }
 
 @media screen and (max-device-width: 768px) {
-  body {
+  .container {
     display: none !important;
   }
   .responsive {
     display: block;
-    text-align: center;
+    text-align: center !important;
   }
 }
