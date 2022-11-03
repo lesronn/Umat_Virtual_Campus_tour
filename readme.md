@@ -8,4 +8,4 @@ A system to help students,visitors , teahching and non-teaching stuff, know thei
 
 ## App Demo WebSite
 
-🔗🔗🔗 https://ios-calculator-lyart.vercel.app
+🔗🔗🔗 https://umat-virtual-campus-tour.vercel.app
