@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: "Rubik_Regular";
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  min-height: 100vh;
+  flex-grow: 1;
+  flex-wrap: wrap;
+}
+
+.model-section {
+  flex: 1;
+  background-color: #f5f5f5;
+}
+model-viewer {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  background-color: #000000;
+}
+.info-section {
+  flex: 0 0 40%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.cmh {
+  background-color: #f5b94e;
+}
+.kth {
+  background-color: #ff432c;
+}
+.library {
+  background-color: #737373;
+}
+.admin {
+  background-color: #00992a;
+}
+.umat {
+  background-color: #007d00;
+}
+
+.info-content {
+  padding: 20px 40px 40px 40px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+.info-content span {
+  font-size: 15px;
+  font-family: "NexaRegular";
+  text-align: center;
+}
+
+h1 {
+  font-size: 30px;
+  margin-bottom: 24px;
+  color: #333;
+  text-align: center;
+  font-family: "Rubik_Medium";
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+.back-button {
+  margin: 20px 0 0 20px;
+  cursor: pointer;
+}
+
+.back-btn-icon {
+  width: 30px;
+  height: 30px;
+}
+.button-white {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: none;
+}
+.admin-title,
+.admin-subtitle {
+  display: block;
+}
+
+/* Responsive styles using CSS media queries */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .swipe {
+    font-size: 13px !important;
+  }
+
+  .model-section {
+    height: auto;
+  }
+
+  .info-section {
+    width: 100%;
+  }
+
+  .info-content {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+  .button-white {
+    z-index: 1;
+    display: block !important;
+  }
+  .back-button {
+    display: none;
+  }
+
+  .icon-white {
+    filter: invert(1);
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+  .admin-title,
+  .admin-subtitle {
+    display: none;
+  }
+
+  .admin-info {
+    padding: 10px 15px;
+  }
+
+  .hotspot-buttons {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .HotspotAnnotation {
+    font-size: 12px;
+  }
+}

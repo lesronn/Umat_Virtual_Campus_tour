@@ -1,46 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chamber Of Mines Hall</title>
-    <link rel="stylesheet" href="../style.css">
-</head>
-
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chamber of Mines Hall</title>
+    <script
+      type="module"
+      src="https://cdnjs.cloudflare.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"
+    ></script>
+    <link rel="stylesheet" href="../styles/globalstyles.css" />
+    <link rel="stylesheet" href="../styles/page.css" />
+  </head>
+  <body>
     <div id="loading" class="page"></div>
-    <div class="cmh_container">
-        <div class="cmh_modelview">
-
-            <iframe
-                src="https://3dwarehouse.sketchup.com/embed/f950cfc5-00c7-46f1-8f69-07368df46d19?token=7yDO5EOFguE=&binaryName=s21"
-                frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="580" height="326"
-                allowfullscreen></iframe>
-
+    <div class="container">
+      <div class="model-section">
+        <div
+          class="button-white back-button"
+          onclick="location.href='../index.html'"
+        >
+          <img
+            src="../assets/img/back.png"
+            alt=""
+            class="back-btn-icon icon-white"
+          />
         </div>
-        <div class="cmh_modelinfo cmh_b">
-            <div class="cmh_back_btn" onclick="location.href='../index.html'">
-                <img src="../assets/img/back.png" alt="" class="cmh_back_btn_img">
-            </div>
-            <div class="cmh_info">
-                <h1> Chamber of Mines Hall</h1>
-                <p>Known as the home of brave and brilliant engineers, the chamber of mines hall is the oldest
-                    residential facility on UMaT campus. It comprises of two blocks, Novotel- constructed in 1986
-                    and accommodates 200 students, and Dubai-constructed in 2003 and equally houses 200 students.
-                    Each of these blocks has 4 floors. The chamber of mines hall aslo houses a number of facilities
-                    such as; the Junior Common Room(JCR), the SRC gym and the hall assistant lodge and offices,
-                    as well as, two printing press. The hall is located to the west of UMaT campus. A 3D model of the
-                    chamber of mines hall will be simulated in this project.</p>
-            </div>
+        <model-viewer
+          src="../assets/models/cmh.gltf"
+          poster="../assets/img/cmhposter.webp"
+          alt="Chamber of Mines Hall 3D Model"
+          camera-controls
+          auto-rotate
+          ar
+          ar-modes="scene-viewer quick-look"
+          shadow-intensity="2"
+          exposure="2"
+          shadow-softness="1"
+          camera-orbit="-136.4deg 81.71deg 7957m"
+          field-of-view="25.44deg"
+          min-camera-orbit="auto 40deg auto"
+          max-camera-orbit="auto 80deg auto"
+        >
+          <div class="progress-bar hide" slot="progress-bar">
+            <div class="update-bar"></div>
+          </div>
+          <button slot="ar-button" id="ar-button">View in your space</button>
+          <div id="ar-prompt">
+            <img src="../assets/img/ar_hand_prompt.png" />
+          </div>
+        </model-viewer>
+      </div>
 
+      <div class="info-section cmh">
+        <!-- <button class="back-button">←</button> -->
+        <div class="back-button" onclick="location.href='../index.html'">
+          <img src="../assets/img/back.png" alt="" class="back-btn-icon" />
         </div>
-
+        <div class="info-content">
+          <h1>Chamber of Mines Hall</h1>
+          <p>
+            Known as the home of brave and brilliant engineers, the chamber of
+            mines hall is the oldest residential facility on UMaT campus. It
+            comprises of two blocks, Novotel- constructed in 1986 and
+            accommodates 200 students, and Dubai-constructed in 2003 and equally
+            houses 200 students. Each of these blocks has 4 floors. The chamber
+            of mines hall also houses a number of facilities such as: the Junior
+            Common Room(JCR), the SRC gym and the hall assistant lodge and
+            offices, as well as, two printing press. The hall is located to the
+            west of UMaT campus. A 3D model of the chamber of mines hall will be
+            simulated in this project.
+          </p>
+        </div>
+      </div>
     </div>
 
-
     <script src="../script.js"></script>
-</body>
-
+  </body>
 </html>

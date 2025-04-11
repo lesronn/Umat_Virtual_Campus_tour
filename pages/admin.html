@@ -1,51 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administration</title>
-    <link rel="stylesheet" href="../style.css">
-</head>
-
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Main Administration</title>
+    <script
+      type="module"
+      src="https://cdnjs.cloudflare.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"
+    ></script>
+    <link rel="stylesheet" href="../styles/globalstyles.css" />
+    <link rel="stylesheet" href="../styles/page.css" />
+  </head>
+  <body>
     <div id="loading" class="page"></div>
-    <div class="admin_container">
-        <div class="admin_modelview">
-            <!-- <canvas class="webgl">
-            </canvas> -->
-
-
-            <div class="sketchfab-embed-wrapper"> <iframe title="Main Admininstration Model" frameborder="0"
-                    allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"
-                    allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking
-                    execution-while-out-of-viewport execution-while-not-rendered web-share
-                    src="https://sketchfab.com/models/7d4dd86fbefe4c82a93bd45bd214a42a/embed"> </iframe>
-            </div>
-
-
-
-
+    <div class="container">
+      <div class="model-section">
+        <div
+          class="button-white back-button"
+          onclick="location.href='../index.html'"
+        >
+          <img
+            src="../assets/img/back.png"
+            alt=""
+            class="back-btn-icon icon-white"
+          />
         </div>
-        <div class="admin_modelinfo">
-            <div class="admin_back_btn" onclick="location.href='../index.html'">
-                <img src="../assets/img/back.png" alt="" class="admin_back_btn_img">
-            </div>
-            <div class="admin_info">
-                <h1> The Main Administration</h1>
-                <p>The UMaT administration block is the largest and finest block on UMaT campus. It is the centre
-                    of administration and houses the esteemed offices of the vice chancellor, pro vice chancellor,
-                    deans, registrar and many other student and staff service units.
-                    This is a huge complex with about
-                    5 floor compartments with each compartment housing about 10-15 administrative offices. This
-                    complex is geographically to the north of the UMaT campus and adjacent the main university
-                    entrance</p>
-            </div>
+        <model-viewer
+          src="../assets/models/admin.glb"
+          poster="../assets/img/adminposter.webp"
+          alt="The Main Administration 3D Model"
+          camera-controls
+          auto-rotate
+          ar
+          ar-modes="scene-viewer quick-look"
+          shadow-intensity="1"
+          camera-orbit="0.2812deg 84.34deg 65.72m"
+          field-of-view="23.69deg"
+          min-camera-orbit="auto 40deg auto"
+          max-camera-orbit="auto 80deg auto"
+        >
+          <div class="progress-bar hide" slot="progress-bar">
+            <div class="update-bar"></div>
+          </div>
+          <button slot="ar-button" id="ar-button">View in your space</button>
+          <div id="ar-prompt">
+            <img src="../assets/img/ar_hand_prompt.png" />
+          </div>
+        </model-viewer>
+      </div>
 
+      <div class="info-section admin">
+        <!-- <button class="back-button">←</button> -->
+        <div class="back-button" onclick="location.href='../index.html'">
+          <img src="../assets/img/back.png" alt="" class="back-btn-icon" />
         </div>
+        <div class="info-content">
+          <h1>The Main Administration</h1>
+          <p>
+            The UMaT administration block is the largest and finest block on
+            UMaT campus. It is the centre of administration and houses the
+            esteemed offices of the vice chancellor, pro vice chancellor, deans,
+            registrar and many other student and staff service units. This is a
+            huge complex with about 5 floor compartments with each compartment
+            housing about 10-15 administrative offices. This complex is
+            geographically to the north of the UMaT campus and adjacent the main
+            university entrance
+          </p>
+        </div>
+      </div>
     </div>
-    <script src="../script.js"></script>
-</body>
 
+    <script src="../script.js"></script>
+  </body>
 </html>

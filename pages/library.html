@@ -1,47 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Library</title>
-    <link rel="stylesheet" href="../style.css">
-</head>
-
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The University Library</title>
+    <script
+      type="module"
+      src="https://cdnjs.cloudflare.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"
+    ></script>
+    <link rel="stylesheet" href="../styles/globalstyles.css" />
+    <link rel="stylesheet" href="../styles/page.css" />
+  </head>
+  <body>
     <div id="loading" class="page"></div>
-    <div class="library_container">
-        <div class="library_modelview">
-            <div class="sketchfab-embed-wrapper"> <iframe title="Library" frameborder="0" allowfullscreen
-                    mozallowfullscreen="true" webkitallowfullscreen="true"
-                    allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking
-                    execution-while-out-of-viewport execution-while-not-rendered web-share
-                    src="https://sketchfab.com/models/1a1edf8b58e547979a1bc3a829d7ba31/embed"> </iframe>
-
-            </div>
-
+    <div class="container">
+      <div class="model-section">
+        <div
+          class="button-white back-button"
+          onclick="location.href='../index.html'"
+        >
+          <img
+            src="../assets/img/back.png"
+            alt=""
+            class="back-btn-icon icon-white"
+          />
         </div>
-        <div class="library_modelinfo">
-            <div class="library_back_btn" onclick="location.href='../index.html'">
-                <img src="../assets/img/back.png" alt="" class="library_back_btn_img">
-            </div>
-            <div class="library_info">
-                <h1> The University Library</h1>
+        <model-viewer
+          src="../assets/models/library.gltf"
+          poster="../assets/img/libraryposter.webp"
+          alt="The University Library 3D Model"
+          camera-controls
+          auto-rotate
+          ar
+          ar-modes="scene-viewer quick-look"
+          shadow-intensity="2"
+          exposure="2"
+          shadow-softness="1"
+          camera-orbit="-810.1deg 84.25deg 3349m"
+          field-of-view="28.64deg"
+          min-camera-orbit="auto 40deg auto"
+          max-camera-orbit="auto 80deg auto"
+        >
+          <div class="progress-bar hide" slot="progress-bar">
+            <div class="update-bar"></div>
+          </div>
+          <button slot="ar-button" id="ar-button">View in your space</button>
+          <div id="ar-prompt">
+            <img src="../assets/img/ar_hand_prompt.png" />
+          </div>
+        </model-viewer>
+      </div>
 
-                <p>This library complex is the centre for studies at the UMaT campus. It also contain an Information
-                    Technology (IT) unit where students can access the internet for research and project purposes. It
-                    has three floor compartments with each containing about 50 seats. The UMaT library also houses
-                    past project work of students to aid easy referencing by current students. The library is situated
-                    at
-                    the centre of the university campus. In this project, a 3D model of this building will be simulated
-                </p>
-            </div>
-
+      <div class="info-section library">
+        <!-- <button class="back-button">←</button> -->
+        <div class="back-button" onclick="location.href='../index.html'">
+          <img src="../assets/img/back.png" alt="" class="back-btn-icon" />
         </div>
+        <div class="info-content">
+          <h1>The University Library</h1>
+          <p>
+            This library complex is the centre for studies at the UMaT campus.
+            It also contain an Information Technology (IT) unit where students
+            can access the internet for research and project purposes. It has
+            three floor compartments with each containing about 50 seats. The
+            UMaT library also houses past project work of students to aid easy
+            referencing by current students. The library is situated at the
+            centre of the university campus. In this project, a 3D model of this
+            building will be simulated
+          </p>
+        </div>
+      </div>
     </div>
 
     <script src="../script.js"></script>
-</body>
-
+  </body>
 </html>

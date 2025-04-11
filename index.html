@@ -1,130 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>UMat Virtual Campus Tour</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<script>
-
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <script>
     function openNav() {
-        document.getElementById("myNav").style.display = "block";
-
+      document.getElementById("myNav").style.display = "block";
     }
 
     /* Close */
     function closeNav() {
-        document.getElementById("myNav").style.display = "none";
+      document.getElementById("myNav").style.display = "none";
     }
-</script>
+  </script>
 
-<body>
-    <div class="responsive">
-        <h4>This app is not available smaller screens</h4>
-      </div>
+  <body>
+    <!-- <div class="responsive">
+      <h4>This app is not available smaller screens</h4>
+    </div> -->
     <div id="loading" class="page"></div>
 
     <div id="myNav" class="overlay">
-
-        <!-- <video id="myVideo" controls>
+      <!-- <video id="myVideo" controls>
             <source src="./assets/img/video.mp4" type="video/mp4">
 
 
         </video> -->
 
-        <iframe width="640" height="360" frameborder="0" src="https://mega.nz/embed/X2ITFBRb#Ovt3FteQ1886oD-YvPxmldgppW7BXNAOhAk8eOf1nds" allowfullscreen ></iframe>
+      <iframe
+        width="640"
+        height="360"
+        frameborder="0"
+        src="https://mega.nz/embed/X2ITFBRb#Ovt3FteQ1886oD-YvPxmldgppW7BXNAOhAk8eOf1nds"
+        allowfullscreen
+      ></iframe>
 
-        <div class="close" onclick="closeNav()"
-            style="color: white; position: absolute;top: 10px; right: 0; font-size: 20px; cursor: pointer;">
-            close
-        </div>
+      <div
+        class="close"
+        onclick="closeNav()"
+        style="
+          color: white;
+          position: absolute;
+          top: 10px;
+          right: 0;
+          font-size: 20px;
+          cursor: pointer;
+        "
+      >
+        close
+      </div>
     </div>
     <div class="container">
-        <div class="top">
-            <img src="./assets/img/depth.png" alt="" class="depth ">
-            <h1>Explore Facilities of the <br /> University of Mines and Technology</h1>
-            <img src="./assets/img/depth6.png" alt="" class="depth6">
+      <div class="top">
+        <img src="./assets/img/depth.png" alt="" class="depth" />
+        <h1>
+          Explore Facilities of the <br />
+          University of Mines and Technology
+        </h1>
+        <img src="./assets/img/depth6.png" alt="" class="depth6" />
 
-            <img src="./assets/img/depth2.png" alt="" class="depth2">
+        <img src="./assets/img/depth2.png" alt="" class="depth2" />
+      </div>
+      <div class="middle">
+        <div class="leftcards">
+          <div class="lib card" onclick="location.href='./pages/library.html'">
+            <div class="bg_card"></div>
+            <div class="content_card">
+              <img src="./assets/img/library.png" alt="" class="library_icon" />
+
+              <b>Library</b>
+            </div>
+          </div>
+          <div class="cmh card" onclick="location.href='./pages/cmh.html'">
+            <div class="cmh_bg_card"></div>
+            <div class="cmh_content_card">
+              <img src="./assets/img/hall.png" alt="" class="cmh_icon" />
+
+              <b>CMH</b>
+            </div>
+          </div>
         </div>
-        <div class="middle">
-            <div class="leftcards">
-                <div class="lib card" onclick="location.href='./pages/library.html'">
-                    <div class="bg_card"></div>
-                    <div class="content_card">
-                        <img src="./assets/img/library.png" alt="" class="library_icon">
+        <div class="centerview">
+          <img src="./assets/img/depth7.png" alt="" class="depth7" />
 
-                        <b>Library</b>
-                    </div>
-                </div>
-                <div class="cmh card" onclick="location.href='./pages/cmh.html'">
-                    <div class="cmh_bg_card"></div>
-                    <div class="cmh_content_card">
-                        <img src="./assets/img/hall.png" alt="" class="cmh_icon">
-
-                        <b>CMH</b>
-                    </div>
-
-                </div>
-            </div>
-            <div class="centerview">
-                <img src="./assets/img/depth7.png" alt="" class="depth7">
-
-                <img src="./assets/img/landing.png" alt="" class="landing">
-            </div>
-            <div class="rightcards ">
-                <div class="admin card" onclick="location.href='./pages/admin.html'">
-                    <div class="admin_bg_card"></div>
-                    <div class="admin_content_card">
-                        <img src="./assets/img/admin.png" alt="" class="admin_icon">
-
-                        <b>Admin</b>
-                    </div>
-                </div>
-                <div class="kth card" onclick="location.href='./pages/kth.html'">
-                    <div class="kth_bg_card"></div>
-                    <div class="kth_content_card">
-                        <img src="./assets/img/hall.png" alt="" class="kth_icon">
-
-                        <b>KTH</b>
-                    </div>
-
-                </div>
-            </div>
-
+          <img src="./assets/img/landing.png" alt="" class="landing" />
         </div>
-        <div class="bottom">
-            <div class="bottom_card">
-                <a href="javascript:void(0)" onclick=" openNav()" class="tour_btn pulse">
-                    Take Tour
-                </a>
-                <div class="keys">
-                    <div class="col">
-                        <div class="color_container">
-                            <div class="color_lib color"> </div> <span>University Library</span>
-                        </div>
-                        <div class="color_container">
-                            <div class="color_cmh color"> </div> <span>Chamber of Mines Hall</span>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="color_container">
-                            <div class="color_kth color"> </div> <span>Kofi Tetteh Hall</span>
-                        </div>
-                        <div class="color_container">
-                            <div class="color_admin color"> </div> <span>Main Administration</span>
-                        </div>
-                    </div>
+        <div class="rightcards">
+          <div class="admin card" onclick="location.href='./pages/admin.html'">
+            <div class="admin_bg_card"></div>
+            <div class="admin_content_card">
+              <img src="./assets/img/admin.png" alt="" class="admin_icon" />
 
-
-                </div>
+              <b>Admin</b>
             </div>
-            <p><b>Developed with ❤️ | By <a href="https://github.com/lesronn" target="_blank">Acheampong Victor Ofori
-                        Jnr</a> </b></p>
+          </div>
+          <div class="kth card" onclick="location.href='./pages/kth.html'">
+            <div class="kth_bg_card"></div>
+            <div class="kth_content_card">
+              <img src="./assets/img/hall.png" alt="" class="kth_icon" />
+
+              <b>KTH</b>
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="bottom">
+        <div class="bottom_card">
+          <a href="./pages/tour.html" class="tour_btn pulse"> Take Tour </a>
+          <div class="keys">
+            <div class="col">
+              <div class="color_container">
+                <div class="color_lib color"></div>
+                <span>University Library</span>
+              </div>
+              <div class="color_container">
+                <div class="color_cmh color"></div>
+                <span>Chamber of Mines Hall</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="color_container">
+                <div class="color_kth color"></div>
+                <span>Kofi Tetteh Hall</span>
+              </div>
+              <div class="color_container">
+                <div class="color_admin color"></div>
+                <span>Main Administration</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p>
+          <b
+            >Developed with ❤️ | By
+            <a href="https://github.com/lesronn" target="_blank"
+              >Acheampong Victor Ofori Jnr</a
+            >
+          </b>
+        </p>
+      </div>
     </div>
-    <script src="./script.js"></script>
-    </body>
-    </html>
+    <script>
+      function onReady(callback) {
+        var intervalId = window.setInterval(function () {
+          if (document.getElementsByTagName("body")[0] !== undefined) {
+            window.clearInterval(intervalId);
+            callback.call(this);
+          }
+        }, 300);
+      }
+
+      function setVisible(selector, visible) {
+        document.querySelector(selector).style.display = visible
+          ? "block"
+          : "none";
+      }
+      window.addEventListener("load", function () {
+        // This fires when everything is fully loaded including all resources
+        console.log("Page fully loaded");
+        onReady(function () {
+          setVisible(".page", true);
+          setVisible("#loading", false);
+        });
+      });
+    </script>
+  </body>
+</html>

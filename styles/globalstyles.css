@@ -1,0 +1,247 @@
+@font-face {
+  font-family: "Rubik_Regular";
+  src: url("../assets/fonts/Rubik-Regular.ttf");
+}
+@font-face {
+  font-family: "Rubik_Medium";
+  src: url("../assets/fonts/Rubik-Medium.ttf");
+}
+@font-face {
+  font-family: "NexaRegular";
+  src: url("../assets/fonts/NexaRegular.ttf");
+}
+
+body {
+  font-family: "Rubik_Regular";
+}
+.swipe {
+  position: absolute;
+  font-size: 18px !important;
+  font-family: "Rubik_Medium";
+  color: white;
+  z-index: 1;
+  top: 20px;
+  left: 27%;
+}
+.progress-bar {
+  display: block;
+  width: 33%;
+  height: 10%;
+  max-height: 2%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  border-radius: 25px;
+  box-shadow: 0px 3px 10px 3px rgba(0, 0, 0, 0.5),
+    0px 0px 5px 1px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.progress-bar.hide {
+  visibility: hidden;
+  transition: visibility 0.3s;
+}
+
+.update-bar {
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 0%;
+  height: 100%;
+  border-radius: 25px;
+  float: left;
+  transition: width 0.3s;
+}
+
+#ar-button {
+  background-image: url("../assets/img/ar_icon.png");
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-position: 12px 50%;
+  background-color: #fff;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  bottom: 16px;
+  padding: 0px 16px 0px 40px;
+  font-family: Roboto Regular, Helvetica Neue, sans-serif;
+  font-size: 14px;
+  color: #4285f4;
+  height: 36px;
+  line-height: 36px;
+  border-radius: 18px;
+  border: 1px solid #dadce0;
+}
+
+#ar-button:active {
+  background-color: #e8eaed;
+}
+
+#ar-button:focus {
+  outline: none;
+}
+
+#ar-button:focus-visible {
+  outline: 1px solid #4285f4;
+}
+
+model-viewer > #ar-prompt {
+  position: absolute;
+  left: 50%;
+  bottom: 60px;
+  animation: elongate 2s infinite ease-in-out alternate;
+  display: none;
+}
+
+model-viewer[ar-status="session-started"] > #ar-prompt {
+  display: block;
+}
+
+model-viewer > #ar-prompt > img {
+  animation: circle 4s linear infinite;
+}
+
+#loading {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255);
+  background-image: url("../assets/img/Rocket.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.hotspot-buttons {
+  width: 100%;
+  /* background: red; */
+  margin-top: 5px;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+@keyframes circle {
+  from {
+    transform: translateX(-50%) rotate(0deg) translateX(50px) rotate(0deg);
+  }
+  to {
+    transform: translateX(-50%) rotate(360deg) translateX(50px) rotate(-360deg);
+  }
+}
+
+@keyframes elongate {
+  from {
+    transform: translateX(100px);
+  }
+  to {
+    transform: translateX(-100px);
+  }
+}
+
+.Hotspot {
+  background: #00000070;
+  border-radius: 32px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  cursor: pointer;
+  font-size: 15px;
+  /* font-family: "NexaRegular"; */
+  height: 15px;
+  padding: 5px;
+  position: relative;
+  transition: opacity 0.3s;
+  width: 15px;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  border: 1.5px solid #ffffff;
+  display: none;
+}
+
+.Hotspot:not([data-visible]) {
+  background: transparent;
+  border: 4px solid #fff;
+  box-shadow: none;
+  height: 32px;
+  pointer-events: none;
+  width: 32px;
+}
+
+.Hotspot:focus {
+  border: 2px solid rgb(0, 128, 200);
+  outline: none;
+}
+
+.Hotspot > * {
+  opacity: 1;
+  transform: translateY(-50%);
+}
+
+.HotspotAnnotation {
+  background: #00000095;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+  display: block;
+  font-family: "NexaRegular";
+  font-size: 18px;
+  font-weight: 600;
+  left: calc(100% + 1em);
+  max-width: 128px;
+  overflow-wrap: break-word;
+  padding: 0.5em 1em;
+  position: absolute;
+  top: 50%;
+  width: max-content;
+}
+
+.Hotspot:not([data-visible]) > * {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(calc(-50% + 4px));
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.hotspot-buttons {
+  width: 100%;
+  /* background: red; */
+  margin-top: 10px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+}
+
+.HotspotButton {
+  padding: 10px;
+  border-radius: 5px;
+  outline: none !important;
+  margin-right: 10px;
+  border: 1px solid white;
+  background: none !important;
+  color: white;
+  font-family: "Rubik_Medium";
+  font-size: 13px;
+  cursor: pointer;
+  margin-top: 20px;
+  z-index: 1;
+}
+
+.HotspotButton.selected {
+  background-color: white !important;
+  color: black;
+}
+
+@media (max-width: 384px) {
+  .HotspotButton {
+    padding: 5px 7px;
+    margin-right: 5px;
+    font-size: 11px;
+    margin-top: 10px;
+  }
+}
