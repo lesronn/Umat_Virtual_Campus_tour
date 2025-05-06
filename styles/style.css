@@ -4,26 +4,28 @@
   --kth_color: #ff432c;
   --admin_color: #00992a;
   --library_color: #737373;
-  --umat: #007d00
+  --umat: #007d00;
   --bg_color: #eeeeee;
   --white_color: #ffffff;
   --text_color: #242f65;
-  font-family: "Rubik_Regular";
+  font-family: "Rubik_Regular", sans-serif;
 }
 
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
+
 #loading {
   display: block;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(255, 255, 255);
+  background-color: rgba(255, 255, 255, 1);
   background-image: url("../assets/img/Rocket.gif");
   background-repeat: no-repeat;
   background-position: center;
@@ -31,112 +33,147 @@
 
 .overlay {
   display: none;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
   width: 100%;
   height: 100%;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.8);
 }
+
 video {
   height: 90%;
   width: 90%;
+  max-width: 100%;
+  object-fit: contain;
 }
+
 .sketchfab-embed-wrapper {
   height: 99.9%;
+  width: 100%;
 }
+
 img {
   -webkit-user-drag: none;
   -khtml-user-drag: none;
   -moz-user-drag: none;
   -o-user-drag: none;
   user-drag: none;
+  max-width: 100%;
+  height: auto;
 }
 
 @font-face {
   font-family: "Rubik_Regular";
   src: url("../assets/fonts/Rubik-Regular.ttf");
+  font-display: swap;
 }
+
 @font-face {
   font-family: "Rubik_Medium";
   src: url("../assets/fonts/Rubik-Medium.ttf");
+  font-display: swap;
 }
 
-
-
+html,
 body {
   background: var(--bg_color);
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
   display: flex;
   justify-content: center;
+  align-items: stretch;
 }
+
 .container {
-  display: grid;
-  height: 100%;
-  width: 1300px;
-  grid-template-rows: 25% 55% 20%;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  max-width: 1300px;
+  padding: 0 15px;
 }
+
 .top {
   display: flex;
-  height: 100%;
+  height: 25vh;
   width: 100%;
   justify-content: center;
-  /* background: red; */
   align-items: center;
+  position: relative;
+  flex-shrink: 0;
 }
+
 .top h1 {
   color: var(--text_color);
-  font-family: "Rubik_Medium";
+  font-family: "Rubik_Medium", sans-serif;
   text-align: center;
-  font-size: 32px;
+  font-size: 2rem;
+  padding: 0 10px;
 }
 
 .top .depth6 {
   position: absolute;
   width: 150px;
+  max-width: 25%;
   mix-blend-mode: multiply;
-  opacity: 56%;
+  opacity: 0.56;
 }
+
 .top .depth {
   position: relative;
   width: 100px;
+  max-width: 20%;
   right: 30px;
   bottom: 40px;
 }
+
 .top .depth2 {
   position: relative;
   width: 100px;
+  max-width: 20%;
   left: 60px;
   top: 50px;
 }
 
 .middle {
-  height: 100%;
+  flex: 1;
   width: 100%;
-  /* background: yellow; */
   display: grid;
   grid-template-columns: 25% 50% 25%;
+  min-height: 50vh;
+  overflow: visible;
 }
+
 .card {
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
+
+.card:hover {
+  transform: scale(1.05);
+}
+
 .middle .leftcards {
-  /* background: pink; */
   display: flex;
   height: 100%;
   width: 100%;
   flex-direction: column;
   justify-content: space-around !important;
   align-items: center;
-  /* padding: 10px 20px; */
-  /* transform: translateY(30px); */
 }
 
 .leftcards .lib {
-  /* float: left; */
+  position: relative;
 }
+
 .lib .bg_card {
   background: var(--library_color);
   height: 80px;
@@ -144,6 +181,7 @@ body {
   border-radius: 10px;
   transform: rotate(11.34deg);
 }
+
 .lib .content_card {
   background: var(--white_color);
   height: 80px;
@@ -160,9 +198,16 @@ body {
   align-items: center;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+
 .content_card .library_icon {
   width: 50px;
+  max-width: 80%; /* Added for responsiveness */
 }
+
+.cmh {
+  position: relative; /* Added for better positioning */
+}
+
 .cmh .cmh_bg_card {
   background: var(--cmh_color);
   height: 80px;
@@ -186,11 +231,13 @@ body {
   transform: rotate(11.78deg);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+
 .cmh_content_card .cmh_icon {
   width: 40px;
+  max-width: 80%; /* Added for responsiveness */
 }
+
 .middle .centerview {
-  /* background: blue; */
   height: 100%;
   width: 100%;
   display: flex;
@@ -199,29 +246,32 @@ body {
   overflow: visible !important;
   transform: translateY(-50px);
 }
+
 .centerview .depth7 {
   position: relative;
   width: 50px;
+  max-width: 15%;
 }
+
 .centerview .landing {
   width: 100%;
+  max-height: 100%; /* Added to maintain aspect ratio */
+  object-fit: contain; /* Ensures image maintains aspect ratio */
 }
 
 .middle .rightcards {
-  /* background: orangered; */
   display: flex;
   height: 100%;
   width: 100%;
   flex-direction: column;
   justify-content: space-evenly !important;
   align-items: center;
-  float: right;
-  /* padding: 10px 20px; */
-  /* transform: translateY(40px); */
 }
+
 .admin {
-  /* transform: translateY(20px) !important; */
+  position: relative;
 }
+
 .admin .admin_bg_card {
   background: var(--admin_color);
   height: 80px;
@@ -229,6 +279,7 @@ body {
   border-radius: 10px;
   transform: rotate(11.78deg);
 }
+
 .admin .admin_content_card {
   background: var(--white_color);
   height: 80px;
@@ -245,8 +296,14 @@ body {
   align-items: center;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+
 .admin_content_card .admin_icon {
   width: 35px;
+  max-width: 80%;
+}
+
+.kth {
+  position: relative;
 }
 
 .kth .kth_bg_card {
@@ -272,46 +329,63 @@ body {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   transform: rotate(-28.64deg);
 }
+
 .kth_content_card .kth_icon {
   width: 40px;
+  max-width: 80%;
 }
 
 .bottom {
-  height: 100%;
+  height: 20vh;
   width: 100%;
-
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  padding-bottom: 20px;
+  flex-shrink: 0;
 }
 
 .bottom_card {
-  height: 70px;
+  height: auto;
   width: 55%;
   background: var(--white_color);
   border-radius: 15px;
-  padding: 10px;
+  padding: 15px 20px;
   display: flex;
   align-items: center;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+
 .tour_btn {
-  background: #ff432c;
+  background: var(--kth_color);
   padding: 20px;
   text-decoration: none;
   color: var(--white_color);
   border-radius: 5px;
   font-weight: 500;
-  margin-left: 10px;
+  text-align: center;
+  transition: background-color 0.3s ease;
 }
+
+.tour_btn:hover {
+  background-color: #e03a25;
+}
+
 p {
   transform: translateY(-15px);
   color: var(--library_color);
 }
+
 p a {
-  color: #242f65;
+  color: var(--text_color);
+  text-decoration: none;
 }
+
+p a:hover {
+  text-decoration: underline;
+}
+
 .keys {
   margin-left: 70px;
   display: flex;
@@ -321,30 +395,46 @@ p a {
   display: flex;
   margin-bottom: 10px;
   margin-top: 10px;
+  align-items: center;
 }
+
 .color_container span {
   padding-left: 10px;
 }
+
 .color {
   height: 20px;
   width: 20px;
   border-radius: 5px;
+  flex-shrink: 0; /* Prevents color boxes from shrinking */
 }
+
 .color_lib {
   background: var(--library_color);
 }
+
 .color_cmh {
   background: var(--cmh_color);
 }
+
 .color_admin {
   background: var(--admin_color);
 }
+
 .color_kth {
   background: var(--kth_color);
 }
+
 .row {
   margin-left: 40px;
 }
+
+.bottom p {
+  text-align: center;
+  font-size: 17px;
+  padding-top: 40px;
+}
+
 .pulse {
   animation: pulse-animation 1.5s infinite;
 }
@@ -358,12 +448,298 @@ p a {
   }
 }
 
-@media screen and (max-device-width: 768px) {
-  /* .container {
-    display: none !important;
-  } */
-  /* .responsive {
-    display: block;
-    text-align: center !important;
-  } */
+/* Improved Media Queries for Responsiveness */
+@media screen and (max-width: 992px) {
+  .top {
+    height: 20vh;
+  }
+
+  .middle {
+    min-height: 55vh;
+  }
+
+  .bottom {
+    height: 25vh;
+  }
+
+  .bottom_card {
+    width: 75%;
+  }
+
+  .top h1 {
+    font-size: 1.75rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .top {
+    height: auto;
+    min-height: 15vh;
+    padding: 20px 0;
+  }
+
+  .top .depth {
+    max-width: 15%;
+    right: 10px;
+    bottom: 10px;
+  }
+  .top .depth2 {
+    max-width: 15%;
+    left: 5px;
+    top: 55px;
+  }
+  .centerview .depth7 {
+    position: relative;
+    width: 50px;
+    max-width: 15%;
+    top: 15px;
+  }
+
+  .middle {
+    /* Keep the original grid structure */
+    height: auto;
+    min-height: auto;
+    padding: 5px 0;
+
+    grid-template-columns: 23% 53% 10%;
+  }
+
+  /* Adjust card positioning for smaller screens but keep the layout */
+  .lib .bg_card,
+  .cmh .cmh_bg_card,
+  .admin .admin_bg_card,
+  .kth .kth_bg_card {
+    height: 70px;
+    width: 70px;
+  }
+
+  .lib .content_card,
+  .cmh_content_card,
+  .admin .admin_content_card,
+  .kth_content_card {
+    height: 70px;
+    width: 70px;
+  }
+
+  .bottom {
+    height: auto;
+    min-height: 20vh;
+    padding: 20px 0 30px;
+  }
+
+  .keys {
+    margin-left: 0;
+  }
+
+  .row {
+    margin-left: 10px;
+  }
+
+  .tour_btn {
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    margin-left: 0;
+  }
+
+  .bottom_card {
+    border-radius: 10px;
+    padding: 10px 15px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .color_container {
+    margin-bottom: 5px;
+  }
+
+  .top h1 {
+    font-size: 1.5rem;
+    padding: 0 10px;
+  }
+
+  .bottom p {
+    text-align: center;
+    font-size: 17px;
+    padding-top: 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 10px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .top {
+    padding: 15px 0;
+  }
+
+  .top .depth {
+    max-width: 15%;
+    right: 10px;
+    bottom: 25px;
+  }
+  .top .depth2 {
+    max-width: 15%;
+    left: 5px;
+    top: 55px;
+  }
+  .centerview .depth7 {
+    position: relative;
+    width: 50px;
+    max-width: 15%;
+    top: 35px;
+  }
+
+  .middle {
+    padding: 0px 0;
+    grid-template-columns: 25% 50% 10%;
+  }
+
+  .lib .bg_card,
+  .lib .content_card,
+  .cmh .cmh_bg_card,
+  .cmh_content_card,
+  .admin .admin_bg_card,
+  .admin .admin_content_card,
+  .kth .kth_bg_card,
+  .kth_content_card {
+    height: 55px;
+    width: 55px;
+    font-size: 13px;
+  }
+
+  .content_card .library_icon,
+  .cmh_content_card .cmh_icon,
+  .admin_content_card .admin_icon,
+  .kth_content_card .kth_icon {
+    width: 25px;
+  }
+
+  .lib .content_card {
+    left: 25px;
+    bottom: 35px;
+  }
+
+  .cmh_content_card,
+  .admin .admin_content_card,
+  .kth_content_card {
+    left: 25px;
+    bottom: 60px;
+  }
+
+  .centerview .landing {
+    transform: scale(1);
+  }
+
+  .bottom_card {
+    width: 95%;
+    padding: 10px;
+  }
+
+  .tour_btn {
+    padding: 7px;
+    font-size: 13px;
+  }
+
+  .top h1 {
+    font-size: 1.25rem;
+
+    padding: 0 10px;
+  }
+
+  .bottom {
+    padding: 10px 0 0px;
+  }
+  .bottom p {
+    text-align: center;
+    font-size: 13px;
+    padding-top: 15px;
+  }
+
+  .color {
+    height: 12px;
+    width: 12px;
+    border-radius: 3px;
+    flex-shrink: 0; /* Prevents color boxes from shrinking */
+  }
+  .color_container span {
+    font-size: 12px;
+  }
+}
+
+/* Landscape orientation fix while maintaining card layout */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  .container {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .top {
+    height: auto;
+    padding: 10px 0;
+    min-height: 60px;
+  }
+
+  .middle {
+    padding: 5px 0;
+    min-height: 200px;
+    /* Keep the grid structure */
+  }
+
+  /* Make cards even smaller for landscape */
+  .lib .bg_card,
+  .lib .content_card,
+  .cmh .cmh_bg_card,
+  .cmh_content_card,
+  .admin .admin_bg_card,
+  .admin .admin_content_card,
+  .kth .kth_bg_card,
+  .kth_content_card {
+    height: 55px;
+    width: 55px;
+  }
+
+  .content_card .library_icon,
+  .cmh_content_card .cmh_icon,
+  .admin_content_card .admin_icon,
+  .kth_content_card .kth_icon {
+    width: 25px;
+  }
+
+  .lib .content_card {
+    left: 25px;
+    bottom: 35px;
+  }
+
+  .cmh_content_card,
+  .admin .admin_content_card,
+  .kth_content_card {
+    left: 25px;
+    bottom: 60px;
+  }
+
+  .centerview .landing {
+    transform: scale(0.7);
+  }
+
+  .bottom {
+    height: auto;
+    padding: 10px 0 20px;
+  }
+
+  .bottom_card {
+    margin-bottom: 15px;
+  }
 }
