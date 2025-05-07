@@ -25,7 +25,7 @@
   z-index: 100;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(255, 255, 255, 1);
+  background-color: var(--white_color);
   background-image: url("../assets/img/Rocket.gif");
   background-repeat: no-repeat;
   background-position: center;
@@ -59,7 +59,6 @@ img {
   -khtml-user-drag: none;
   -moz-user-drag: none;
   -o-user-drag: none;
-  user-drag: none;
   max-width: 100%;
   height: auto;
 }
@@ -359,7 +358,7 @@ body {
 
 .tour_btn {
   background: var(--kth_color);
-  padding: 20px;
+  padding: 15px 20px;
   text-decoration: none;
   color: var(--white_color);
   border-radius: 5px;

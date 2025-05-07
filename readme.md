@@ -4,7 +4,8 @@ A system to help students,visitors , teahching and non-teaching stuff, know thei
 
 # Screenshots of the System
 
-![image](https://github.com/lesronn/Umat_Virtual_Campus_tour/blob/main/assets/img/Screenshot_1.png)
+![image](https://github.com/lesronn/Umat_Virtual_Campus_tour/blob/main/assets/img/snapshot.webp)
+![image](https://github.com/lesronn/Umat_Virtual_Campus_tour/blob/main/assets/img/lighhousereport.webp)
 
 ## App Demo WebSite
 
