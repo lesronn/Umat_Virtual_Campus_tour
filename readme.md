@@ -1,6 +1,6 @@
 # UMAT Virtual Campus Tour
 
-A system to help students, visitors, teaching and non-teaching staff know their way around the University.
+A user-friendly system designed to help students, visitors, and staff easily find their way around the UMaT campus.
 
 ## Screenshots of the System
 
